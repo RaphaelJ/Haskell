@@ -21,28 +21,24 @@ main = do
 parse :: State String [Expr]
 parse = do
     xs <- get
-    case xs of
-        ('[':xs') -> do
-            put xs'
-            nested <- parse
-            next <- parse 
-            return $ ExprHook nested : next
-        (']':xs') ->
-            put xs' >> return []
-        ('>':xs') -> addAndParse ExprGT xs'
-        ('<':xs') -> addAndParse ExprLT xs'
-        ('+':xs') -> addAndParse ExprPlus xs'
-        ('-':xs') -> addAndParse ExprMinus xs'
-        ('.':xs') -> addAndParse ExprDot xs'
-        (',':xs') -> addAndParse ExprComma xs'
-        [] -> return []
-        (_:xs') -> put xs' >> parse
-  where
-    -- Add the current expression and parse what is following
-    addAndParse expr xs = do
-        put xs
-        next <- parse
-        return $ expr : next
+    if xs == []
+    then return []
+    else do
+        let (x:xs') = xs
+        put xs'
+        case x of
+            '[' -> do
+                nested <- parse
+                fmap (ExprHook nested :) parse
+            ']' ->
+                put xs' >> return []
+            '>' -> fmap (ExprGT:) parse
+            '<' -> fmap (ExprLT:) parse
+            '+' -> fmap (ExprPlus:) parse
+            '-' -> fmap (ExprMinus:) parse
+            '.' -> fmap (ExprDot:) parse
+            ',' -> fmap (ExprComma:) parse
+            _ -> parse
 
 type Tape = ([Int], [Int])
 
