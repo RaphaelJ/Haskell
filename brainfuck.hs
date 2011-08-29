@@ -1,4 +1,4 @@
--- This is a little Brainfuck interpreter.
+-- This is a small Brainfuck interpreter.
 -- It uses the State monad for parsing and execution.
 -- The execution isn't done inside the execution function but inside
 -- interact.
