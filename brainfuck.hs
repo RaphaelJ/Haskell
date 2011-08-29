@@ -1,3 +1,8 @@
+-- This is a little Brainfuck interpreter.
+-- It uses the State monad for parsing and execution.
+-- The execution isn't done inside the execution function but inside
+-- interact.
+
 import Data.Char
 import Control.Monad.State
 import System
