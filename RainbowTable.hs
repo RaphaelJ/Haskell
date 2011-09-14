@@ -6,8 +6,10 @@ import Data.List
 import qualified Data.Map as M
 import Data.Maybe (catMaybes)
 import Data.String.Utils (strip)
-import Debug.Trace
 import System (getArgs)
+
+-- Generate and use a rainbow table to crack md5 hashes.
+-- The reduce function is not really efficient.
 
 data RainbowTable = RainbowTable {
       rtLines :: M.Map Integer String
@@ -30,7 +32,7 @@ main = do
     menu args
 
 menu ["train", "numeric"] = save "numeric" $ compute md5 numeric 7 1500 30000
-menu ["train", "alphnum"] = save "alphnum" $ compute md5 numeric 4 3000 50000
+menu ["train", "alphnum"] = save "alphnum" $ compute md5 alphanum 4 3000 50000
 menu ["load", "numeric"] = load "numeric" >>= decryptInterface
 menu ["load", "alphnum"] = load "alphanum" >>= decryptInterface
 menu _ = putStrLn $ "train numeric (7 chars) | train alphanum (4 chars) " ++
@@ -64,7 +66,7 @@ decrypt hashFct (RainbowTable linesMap charset passLen chainLen) hash =
     hashs = hash : following
     
     matchesStart = catMaybes $ map (`M.lookup` linesMap) hashs
-    matches = filter ((== hash) . snd) $ concatMap chain (trace (show matchesStart) matchesStart)
+    matches = filter ((== hash) . snd) $ concatMap chain matchesStart
     
     reduceFct = reduce charset (fromIntegral $ length charset) passLen
 
