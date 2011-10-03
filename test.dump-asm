@@ -1,0 +1,1037 @@
+.section .data
+	.align 8
+srZ_srt:
+	.quad	base_GHCziBase_zpzp_closure
+	.quad	base_GHCziList_filter_closure
+	.quad	integerzmgmp_GHCziInteger_smallInteger_closure
+	.quad	base_GHCziNum_zdfEnumInteger_closure
+	.quad	base_GHCziClasses_zdfOrdInteger_closure
+.data
+	.align 8
+srZ_closure:
+	.quad	srZ_info
+	.quad	0
+	.quad	0
+	.quad	0
+.text
+	.align 8
+	.long	srZ_srt-(srO_info)+32
+	.long	0
+	.quad	4294967301
+	.quad	1
+	.quad	4294967306
+srO_info:
+.Lcsr:
+	leaq -24(%rbp),%rax
+	cmpq %r15,%rax
+	jb .Lcsu
+	movq 7(%rbx),%rax
+	movq %rax,-8(%rbp)
+	movq %r14,-16(%rbp)
+	movq $stg_ap_pp_info,-24(%rbp)
+	movl $base_GHCziClasses_zdfOrdInteger_closure,%r14d
+	addq $-24,%rbp
+	jmp base_GHCziClasses_zgze_info
+.Lcsu:
+	jmp *-8(%r13)
+.text
+	.align 8
+	.long	srZ_srt-(srP_info)+8
+	.long	0
+	.quad	2
+	.quad	38654705683
+srP_info:
+.LcsE:
+	leaq -16(%rbp),%rax
+	cmpq %r15,%rax
+	jb .LcsG
+	addq $16,%r12
+	cmpq 144(%r13),%r12
+	ja .LcsI
+	movq $stg_upd_frame_info,-16(%rbp)
+	movq %rbx,-8(%rbp)
+	movq $srO_info,-8(%r12)
+	movq 16(%rbx),%rax
+	movq %rax,0(%r12)
+	leaq -7(%r12),%r14
+	movq 24(%rbx),%rsi
+	movl $base_GHCziList_filter_closure,%ebx
+	addq $-16,%rbp
+	jmp stg_ap_pp_fast
+.LcsI:
+	movq $16,184(%r13)
+.LcsG:
+	jmp *-16(%r13)
+.text
+	.align 8
+	.long	srZ_srt-(srQ_info)+8
+	.long	0
+	.quad	3
+	.quad	38654705680
+srQ_info:
+.LcsT:
+	leaq -16(%rbp),%rax
+	cmpq %r15,%rax
+	jb .LcsV
+	addq $32,%r12
+	cmpq 144(%r13),%r12
+	ja .LcsX
+	movq $stg_upd_frame_info,-16(%rbp)
+	movq %rbx,-8(%rbp)
+	movq $srP_info,-24(%r12)
+	movq 16(%rbx),%rax
+	movq %rax,-8(%r12)
+	movq 24(%rbx),%rax
+	movq %rax,0(%r12)
+	movq 32(%rbx),%rbx
+	leaq -24(%r12),%r14
+	addq $-16,%rbp
+	jmp sry_info
+.LcsX:
+	movq $32,184(%r13)
+.LcsV:
+	jmp *-16(%r13)
+.text
+	.align 8
+	.long	srZ_srt-(srS_info)+0
+	.long	0
+	.quad	3
+	.quad	81604378640
+srS_info:
+.Lctb:
+	leaq -16(%rbp),%rax
+	cmpq %r15,%rax
+	jb .Lctd
+	addq $64,%r12
+	cmpq 144(%r13),%r12
+	ja .Lctf
+	movq $stg_upd_frame_info,-16(%rbp)
+	movq %rbx,-8(%rbp)
+	movq $srQ_info,-56(%r12)
+	movq 16(%rbx),%rax
+	movq %rax,-40(%r12)
+	movq 24(%rbx),%rax
+	movq %rax,-32(%r12)
+	movq 32(%rbx),%rax
+	movq %rax,-24(%r12)
+	movq $ghczmprim_GHCziTypes_ZC_con_info,-16(%r12)
+	movq 16(%rbx),%rax
+	movq %rax,-8(%r12)
+	movq $ghczmprim_GHCziTypes_ZMZN_closure+1,0(%r12)
+	movl $base_GHCziBase_zpzp_closure,%ebx
+	leaq -14(%r12),%r14
+	leaq -56(%r12),%rsi
+	addq $-16,%rbp
+	jmp stg_ap_pp_fast
+.Lctf:
+	movq $64,184(%r13)
+.Lctd:
+	jmp *-16(%r13)
+.text
+	.align 8
+	.long	srZ_srt-(srT_info)+32
+	.long	0
+	.quad	4294967301
+	.quad	1
+	.quad	4294967306
+srT_info:
+.Lctx:
+	leaq -24(%rbp),%rax
+	cmpq %r15,%rax
+	jb .LctA
+	movq 7(%rbx),%rax
+	movq %rax,-8(%rbp)
+	movq %r14,-16(%rbp)
+	movq $stg_ap_pp_info,-24(%rbp)
+	movl $base_GHCziClasses_zdfOrdInteger_closure,%r14d
+	addq $-24,%rbp
+	jmp base_GHCziClasses_zl_info
+.LctA:
+	jmp *-8(%r13)
+.text
+	.align 8
+	.long	srZ_srt-(srU_info)+8
+	.long	0
+	.quad	2
+	.quad	38654705683
+srU_info:
+.LctK:
+	leaq -16(%rbp),%rax
+	cmpq %r15,%rax
+	jb .LctM
+	addq $16,%r12
+	cmpq 144(%r13),%r12
+	ja .LctO
+	movq $stg_upd_frame_info,-16(%rbp)
+	movq %rbx,-8(%rbp)
+	movq $srT_info,-8(%r12)
+	movq 16(%rbx),%rax
+	movq %rax,0(%r12)
+	leaq -7(%r12),%r14
+	movq 24(%rbx),%rsi
+	movl $base_GHCziList_filter_closure,%ebx
+	addq $-16,%rbp
+	jmp stg_ap_pp_fast
+.LctO:
+	movq $16,184(%r13)
+.LctM:
+	jmp *-16(%r13)
+.text
+	.align 8
+	.long	srZ_srt-(srV_info)+8
+	.long	0
+	.quad	3
+	.quad	38654705680
+srV_info:
+.LctZ:
+	leaq -16(%rbp),%rax
+	cmpq %r15,%rax
+	jb .Lcu1
+	addq $32,%r12
+	cmpq 144(%r13),%r12
+	ja .Lcu3
+	movq $stg_upd_frame_info,-16(%rbp)
+	movq %rbx,-8(%rbp)
+	movq $srU_info,-24(%r12)
+	movq 16(%rbx),%rax
+	movq %rax,-8(%r12)
+	movq 24(%rbx),%rax
+	movq %rax,0(%r12)
+	movq 32(%rbx),%rbx
+	leaq -24(%r12),%r14
+	addq $-16,%rbp
+	jmp sry_info
+.Lcu3:
+	movq $32,184(%r13)
+.Lcu1:
+	jmp *-16(%r13)
+.text
+	.align 8
+	.long	srZ_srt-(srN_info)+0
+	.long	0
+	.quad	1
+	.quad	81604378656
+srN_info:
+.Lcum:
+	movq %rbx,%rax
+	andq $7,%rax
+	cmpq $2,%rax
+	jae .Lcun
+	movl $ghczmprim_GHCziTypes_ZMZN_closure+1,%ebx
+	addq $16,%rbp
+	jmp *0(%rbp)
+.Lcun:
+	addq $80,%r12
+	cmpq 144(%r13),%r12
+	ja .Lcur
+	movq $srS_info,-72(%r12)
+	movq 6(%rbx),%rax
+	movq %rax,-56(%r12)
+	movq 14(%rbx),%rax
+	movq %rax,-48(%r12)
+	movq 8(%rbp),%rax
+	movq %rax,-40(%r12)
+	movq $srV_info,-32(%r12)
+	movq 6(%rbx),%rax
+	movq %rax,-16(%r12)
+	movq 14(%rbx),%rax
+	movq %rax,-8(%r12)
+	movq 8(%rbp),%rax
+	movq %rax,0(%r12)
+	movl $base_GHCziBase_zpzp_closure,%ebx
+	leaq -32(%r12),%r14
+	leaq -72(%r12),%rsi
+	addq $16,%rbp
+	jmp stg_ap_pp_fast
+.Lcur:
+	movq $80,184(%r13)
+.Lcup:
+	jmp *-16(%r13)
+.text
+	.align 8
+	.long	srZ_srt-(sry_info)+0
+	.long	0
+	.quad	4294967301
+	.quad	4294967296
+	.quad	81604378633
+sry_info:
+.LcuE:
+	leaq -16(%rbp),%rax
+	cmpq %r15,%rax
+	jb .LcuG
+	movq %rbx,-8(%rbp)
+	movq %r14,%rbx
+	movq $srN_info,-16(%rbp)
+	addq $-16,%rbp
+	testq $7,%rbx
+	jne .LcuJ
+	jmp *(%rbx)
+.LcuG:
+	jmp *-8(%r13)
+.LcuJ:
+	jmp srN_info
+.text
+	.align 8
+	.long	srZ_srt-(srW_info)+16
+	.long	0
+	.quad	0
+	.quad	4294967312
+srW_info:
+.LcuV:
+	leaq -16(%rbp),%rax
+	cmpq %r15,%rax
+	jb .LcuX
+	movq $stg_upd_frame_info,-16(%rbp)
+	movq %rbx,-8(%rbp)
+	movl $integerzmgmp_GHCziInteger_smallInteger_closure,%ebx
+	movl $1,%r14d
+	addq $-16,%rbp
+	jmp stg_ap_n_fast
+.LcuX:
+	jmp *-16(%r13)
+.text
+	.align 8
+	.long	srZ_srt-(srX_info)+16
+	.long	0
+	.quad	0
+	.quad	4294967312
+srX_info:
+.Lcv7:
+	leaq -16(%rbp),%rax
+	cmpq %r15,%rax
+	jb .Lcv9
+	movq $stg_upd_frame_info,-16(%rbp)
+	movq %rbx,-8(%rbp)
+	movl $integerzmgmp_GHCziInteger_smallInteger_closure,%ebx
+	movl $1000,%r14d
+	addq $-16,%rbp
+	jmp stg_ap_n_fast
+.Lcv9:
+	jmp *-16(%r13)
+.text
+	.align 8
+	.long	srZ_srt-(srY_info)+16
+	.long	0
+	.quad	0
+	.quad	12884901904
+srY_info:
+.Lcvj:
+	leaq -40(%rbp),%rax
+	cmpq %r15,%rax
+	jb .Lcvl
+	addq $32,%r12
+	cmpq 144(%r13),%r12
+	ja .Lcvn
+	movq $stg_upd_frame_info,-16(%rbp)
+	movq %rbx,-8(%rbp)
+	movq $srW_info,-24(%r12)
+	movq $srX_info,-8(%r12)
+	leaq -24(%r12),%rax
+	movq %rax,-24(%rbp)
+	leaq -8(%r12),%rax
+	movq %rax,-32(%rbp)
+	movq $stg_ap_pp_info,-40(%rbp)
+	movl $base_GHCziNum_zdfEnumInteger_closure,%r14d
+	addq $-40,%rbp
+	jmp base_GHCziEnum_enumFromTo_info
+.Lcvn:
+	movq $32,184(%r13)
+.Lcvl:
+	jmp *-16(%r13)
+.text
+	.align 8
+	.long	srZ_srt-(srZ_info)+0
+	.long	0
+	.quad	0
+	.quad	133143986198
+srZ_info:
+.LcvA:
+	leaq -16(%rbp),%rax
+	cmpq %r15,%rax
+	jb .LcvC
+	addq $48,%r12
+	cmpq 144(%r13),%r12
+	ja .LcvE
+	movq $stg_CAF_BLACKHOLE_info,-40(%r12)
+	movq 152(%r13),%rax
+	movq %rax,-32(%r12)
+	movq %r13,%rdi
+	movq %rbx,%rsi
+	movl $0,%eax
+	call newCAF
+	leaq -40(%r12),%rax
+	movq %rax,8(%rbx)
+	movq $stg_IND_STATIC_info,(%rbx)
+	movq $stg_bh_upd_frame_info,-16(%rbp)
+	leaq -40(%r12),%rax
+	movq %rax,-8(%rbp)
+	movq $sry_info,-24(%r12)
+	movq $srY_info,-8(%r12)
+	leaq -23(%r12),%rbx
+	leaq -8(%r12),%r14
+	addq $-16,%rbp
+	jmp sry_info
+.LcvE:
+	movq $48,184(%r13)
+.LcvC:
+	jmp *-16(%r13)
+.section .data
+	.align 8
+svO_srt:
+	.quad	base_SystemziIO_print_closure
+	.quad	base_GHCziNum_zdfShowInteger_closure
+	.quad	base_GHCziShow_zdfShowZMZN_closure
+.data
+	.align 8
+svO_closure:
+	.quad	svO_info
+	.quad	0
+	.quad	0
+	.quad	0
+.text
+	.align 8
+	.long	svO_srt-(svN_info)+8
+	.long	0
+	.quad	0
+	.quad	12884901904
+svN_info:
+.Lcw2:
+	leaq -16(%rbp),%rax
+	cmpq %r15,%rax
+	jb .Lcw4
+	movq $stg_upd_frame_info,-16(%rbp)
+	movq %rbx,-8(%rbp)
+	movl $base_GHCziShow_zdfShowZMZN_closure,%ebx
+	movl $base_GHCziNum_zdfShowInteger_closure,%r14d
+	addq $-16,%rbp
+	jmp stg_ap_p_fast
+.Lcw4:
+	jmp *-16(%r13)
+.text
+	.align 8
+	.long	svO_srt-(svO_info)+0
+	.long	0
+	.quad	0
+	.quad	30064771094
+svO_info:
+.Lcwf:
+	leaq -16(%rbp),%rax
+	cmpq %r15,%rax
+	jb .Lcwh
+	addq $32,%r12
+	cmpq 144(%r13),%r12
+	ja .Lcwj
+	movq $stg_CAF_BLACKHOLE_info,-24(%r12)
+	movq 152(%r13),%rax
+	movq %rax,-16(%r12)
+	movq %r13,%rdi
+	movq %rbx,%rsi
+	movl $0,%eax
+	call newCAF
+	leaq -24(%r12),%rax
+	movq %rax,8(%rbx)
+	movq $stg_IND_STATIC_info,(%rbx)
+	movq $stg_bh_upd_frame_info,-16(%rbp)
+	leaq -24(%r12),%rax
+	movq %rax,-8(%rbp)
+	movq $svN_info,-8(%r12)
+	movl $base_SystemziIO_print_closure,%ebx
+	leaq -8(%r12),%r14
+	addq $-16,%rbp
+	jmp stg_ap_p_fast
+.Lcwj:
+	movq $32,184(%r13)
+.Lcwh:
+	jmp *-16(%r13)
+.section .data
+	.align 8
+.globl Main_main_srt
+.type Main_main_srt, @object
+Main_main_srt:
+	.quad	base_GHCziBase_zd_closure
+	.quad	srZ_closure
+	.quad	svO_closure
+.data
+	.align 8
+.globl Main_main_closure
+.type Main_main_closure, @object
+Main_main_closure:
+	.quad	Main_main_info
+	.quad	0
+	.quad	0
+	.quad	0
+.text
+	.align 8
+	.long	Main_main_srt-(Main_main_info)+0
+	.long	0
+	.quad	0
+	.quad	30064771094
+.globl Main_main_info
+.type Main_main_info, @object
+Main_main_info:
+.LcwG:
+	leaq -16(%rbp),%rax
+	cmpq %r15,%rax
+	jb .LcwI
+	addq $16,%r12
+	cmpq 144(%r13),%r12
+	ja .LcwK
+	movq $stg_CAF_BLACKHOLE_info,-8(%r12)
+	movq 152(%r13),%rax
+	movq %rax,0(%r12)
+	movq %r13,%rdi
+	movq %rbx,%rsi
+	movl $0,%eax
+	call newCAF
+	leaq -8(%r12),%rax
+	movq %rax,8(%rbx)
+	movq $stg_IND_STATIC_info,(%rbx)
+	movq $stg_bh_upd_frame_info,-16(%rbp)
+	leaq -8(%r12),%rax
+	movq %rax,-8(%rbp)
+	movl $base_GHCziBase_zd_closure,%ebx
+	movl $svO_closure,%r14d
+	movl $srZ_closure,%esi
+	addq $-16,%rbp
+	jmp stg_ap_pp_fast
+.LcwK:
+	movq $16,184(%r13)
+.LcwI:
+	jmp *-16(%r13)
+.section .data
+	.align 8
+.globl ZCMain_main_srt
+.type ZCMain_main_srt, @object
+ZCMain_main_srt:
+	.quad	base_GHCziTopHandler_runMainIO_closure
+	.quad	Main_main_closure
+.data
+	.align 8
+.globl ZCMain_main_closure
+.type ZCMain_main_closure, @object
+ZCMain_main_closure:
+	.quad	ZCMain_main_info
+	.quad	0
+	.quad	0
+	.quad	0
+.text
+	.align 8
+	.long	ZCMain_main_srt-(ZCMain_main_info)+0
+	.long	0
+	.quad	0
+	.quad	12884901910
+.globl ZCMain_main_info
+.type ZCMain_main_info, @object
+ZCMain_main_info:
+.Lcx7:
+	leaq -16(%rbp),%rax
+	cmpq %r15,%rax
+	jb .Lcx9
+	addq $16,%r12
+	cmpq 144(%r13),%r12
+	ja .Lcxb
+	movq $stg_CAF_BLACKHOLE_info,-8(%r12)
+	movq 152(%r13),%rax
+	movq %rax,0(%r12)
+	movq %r13,%rdi
+	movq %rbx,%rsi
+	movl $0,%eax
+	call newCAF
+	leaq -8(%r12),%rax
+	movq %rax,8(%rbx)
+	movq $stg_IND_STATIC_info,(%rbx)
+	movq $stg_bh_upd_frame_info,-16(%rbp)
+	leaq -8(%r12),%rax
+	movq %rax,-8(%rbp)
+	movl $base_GHCziTopHandler_runMainIO_closure,%ebx
+	movl $Main_main_closure,%r14d
+	addq $-16,%rbp
+	jmp stg_ap_p_fast
+.Lcxb:
+	movq $16,184(%r13)
+.Lcx9:
+	jmp *-16(%r13)
+.data
+	.align 8
+_module_registered:
+	.quad	0
+.text
+	.align 8
+.globl __stginit_Main_
+.type __stginit_Main_, @object
+__stginit_Main_:
+.Lcxq:
+	cmpq $0,_module_registered
+	jne .Lcxr
+.Lcxs:
+	movq $1,_module_registered
+	addq $-8,%rbp
+	movq $__stginit_base_Prelude_,(%rbp)
+	addq $-8,%rbp
+	movq $__stginit_base_GHCziTopHandler_,(%rbp)
+.Lcxr:
+	addq $8,%rbp
+	jmp *-8(%rbp)
+.text
+	.align 8
+.globl __stginit_Main
+.type __stginit_Main, @object
+__stginit_Main:
+.Lcxy:
+	jmp __stginit_Main_
+.text
+	.align 8
+.globl __stginit_ZCMain
+.type __stginit_ZCMain, @object
+__stginit_ZCMain:
+.LcxD:
+	addq $8,%rbp
+	jmp *-8(%rbp)
+
+.data
+	.align 8
+.globl Main_mainzuqsort_closure
+.type Main_mainzuqsort_closure, @object
+Main_mainzuqsort_closure:
+	.quad	Main_mainzuqsort_info
+.text
+	.align 8
+	.quad	4294967301
+	.quad	1
+	.quad	10
+sUx_info:
+.LcUU:
+	movq 7(%rbx),%rsi
+	jmp integerzmgmp_GHCziInteger_geInteger_info
+.text
+	.align 8
+	.quad	0
+	.quad	32
+sUw_info:
+.LcV0:
+	movq %rbx,%r14
+	addq $8,%rbp
+	jmp Main_mainzuqsort_info
+.text
+	.align 8
+	.quad	2
+	.quad	19
+sUy_info:
+.LcV7:
+	leaq -24(%rbp),%rax
+	cmpq %r15,%rax
+	jb .LcV9
+	addq $16,%r12
+	cmpq 144(%r13),%r12
+	ja .LcVb
+	movq $stg_upd_frame_info,-16(%rbp)
+	movq %rbx,-8(%rbp)
+	movq $sUx_info,-8(%r12)
+	movq 16(%rbx),%rax
+	movq %rax,0(%r12)
+	leaq -7(%r12),%r14
+	movq 24(%rbx),%rsi
+	movq $sUw_info,-24(%rbp)
+	addq $-24,%rbp
+	jmp base_GHCziList_filter_info
+.LcVb:
+	movq $16,184(%r13)
+.LcV9:
+	jmp *-16(%r13)
+.text
+	.align 8
+	.quad	4294967301
+	.quad	1
+	.quad	10
+sUC_info:
+.LcVj:
+	movq 7(%rbx),%rsi
+	jmp integerzmgmp_GHCziInteger_ltInteger_info
+.text
+	.align 8
+	.quad	1
+	.quad	32
+sUA_info:
+.LcVt:
+	movq %rbx,%r14
+	movq 8(%rbp),%rsi
+	addq $16,%rbp
+	jmp base_GHCziBase_zpzp_info
+.text
+	.align 8
+	.quad	1
+	.quad	32
+sUB_info:
+.LcVx:
+	movq %rbx,%r14
+	movq $sUA_info,0(%rbp)
+	jmp Main_mainzuqsort_info
+.text
+	.align 8
+	.quad	0
+	.quad	32
+sUv_info:
+.LcVM:
+	movq %rbx,%rax
+	andq $7,%rax
+	cmpq $2,%rax
+	jae .LcVN
+	movl $ghczmprim_GHCziTypes_ZMZN_closure+1,%ebx
+	addq $8,%rbp
+	jmp *0(%rbp)
+.LcVN:
+	addq $72,%r12
+	cmpq 144(%r13),%r12
+	ja .LcVR
+	movq $sUy_info,-64(%r12)
+	movq 6(%rbx),%rax
+	movq %rax,-48(%r12)
+	movq 14(%rbx),%rax
+	movq %rax,-40(%r12)
+	movq $ghczmprim_GHCziTypes_ZC_con_info,-32(%r12)
+	movq 6(%rbx),%rax
+	movq %rax,-24(%r12)
+	leaq -64(%r12),%rax
+	movq %rax,-16(%r12)
+	movq $sUC_info,-8(%r12)
+	movq 6(%rbx),%rax
+	movq %rax,0(%r12)
+	leaq -30(%r12),%rax
+	movq %rax,0(%rbp)
+	leaq -7(%r12),%r14
+	movq 14(%rbx),%rsi
+	movq $sUB_info,-8(%rbp)
+	addq $-8,%rbp
+	jmp base_GHCziList_filter_info
+.LcVR:
+	movq $72,184(%r13)
+.LcVP:
+	jmp *-16(%r13)
+.text
+	.align 8
+	.quad	4294967301
+	.quad	0
+	.quad	15
+.globl Main_mainzuqsort_info
+.type Main_mainzuqsort_info, @object
+Main_mainzuqsort_info:
+.LcW3:
+	leaq -16(%rbp),%rax
+	cmpq %r15,%rax
+	jb .LcW5
+	movq %r14,%rbx
+	movq $sUv_info,-8(%rbp)
+	addq $-8,%rbp
+	testq $7,%rbx
+	jne sUv_info
+	jmp *(%rbx)
+.LcW5:
+	movl $Main_mainzuqsort_closure,%ebx
+	jmp *-8(%r13)
+.data
+	.align 8
+.globl Main_main6_closure
+.type Main_main6_closure, @object
+Main_main6_closure:
+	.quad	integerzmgmp_GHCziIntegerziType_Szh_static_info
+	.quad	1000
+.data
+	.align 8
+.globl Main_main5_closure
+.type Main_main5_closure, @object
+Main_main5_closure:
+	.quad	integerzmgmp_GHCziIntegerziType_Szh_static_info
+	.quad	1
+.data
+	.align 8
+.globl Main_main4_closure
+.type Main_main4_closure, @object
+Main_main4_closure:
+	.quad	Main_main4_info
+	.quad	0
+	.quad	0
+	.quad	0
+.text
+	.align 8
+	.quad	0
+	.quad	22
+.globl Main_main4_info
+.type Main_main4_info, @object
+Main_main4_info:
+.LcWz:
+	leaq -16(%rbp),%rax
+	cmpq %r15,%rax
+	jb .LcWB
+	addq $16,%r12
+	cmpq 144(%r13),%r12
+	ja .LcWD
+	movq $stg_CAF_BLACKHOLE_info,-8(%r12)
+	movq 152(%r13),%rax
+	movq %rax,0(%r12)
+	movq %r13,%rdi
+	movq %rbx,%rsi
+	movl $0,%eax
+	call newCAF
+	leaq -8(%r12),%rax
+	movq %rax,8(%rbx)
+	movq $stg_IND_STATIC_info,(%rbx)
+	movq $stg_bh_upd_frame_info,-16(%rbp)
+	leaq -8(%r12),%rax
+	movq %rax,-8(%rbp)
+	movl $Main_main6_closure+1,%r14d
+	movl $Main_main5_closure+1,%esi
+	movl $Main_main5_closure+1,%edi
+	addq $-16,%rbp
+	jmp base_GHCziNum_upzulist_info
+.LcWD:
+	movq $16,184(%r13)
+.LcWB:
+	jmp *-16(%r13)
+.section .data
+	.align 8
+.globl Main_main3_srt
+.type Main_main3_srt, @object
+Main_main3_srt:
+	.quad	Main_main4_closure
+.data
+	.align 8
+.globl Main_main3_closure
+.type Main_main3_closure, @object
+Main_main3_closure:
+	.quad	Main_main3_info
+	.quad	0
+	.quad	0
+	.quad	0
+.text
+	.align 8
+	.long	Main_main3_srt-(Main_main3_info)+0
+	.long	0
+	.quad	0
+	.quad	4294967318
+.globl Main_main3_info
+.type Main_main3_info, @object
+Main_main3_info:
+.LcWZ:
+	leaq -16(%rbp),%rax
+	cmpq %r15,%rax
+	jb .LcX1
+	addq $16,%r12
+	cmpq 144(%r13),%r12
+	ja .LcX3
+	movq $stg_CAF_BLACKHOLE_info,-8(%r12)
+	movq 152(%r13),%rax
+	movq %rax,0(%r12)
+	movq %r13,%rdi
+	movq %rbx,%rsi
+	movl $0,%eax
+	call newCAF
+	leaq -8(%r12),%rax
+	movq %rax,8(%rbx)
+	movq $stg_IND_STATIC_info,(%rbx)
+	movq $stg_bh_upd_frame_info,-16(%rbp)
+	leaq -8(%r12),%rax
+	movq %rax,-8(%rbp)
+	movl $Main_main4_closure,%r14d
+	addq $-16,%rbp
+	jmp Main_mainzuqsort_info
+.LcX3:
+	movq $16,184(%r13)
+.LcX1:
+	jmp *-16(%r13)
+.section .data
+	.align 8
+.globl Main_main2_srt
+.type Main_main2_srt, @object
+Main_main2_srt:
+	.quad	base_GHCziNum_zdfShowIntegerzuzdcshowList_closure
+	.quad	Main_main3_closure
+.data
+	.align 8
+.globl Main_main2_closure
+.type Main_main2_closure, @object
+Main_main2_closure:
+	.quad	Main_main2_info
+	.quad	0
+	.quad	0
+	.quad	0
+.text
+	.align 8
+	.long	Main_main2_srt-(Main_main2_info)+0
+	.long	0
+	.quad	0
+	.quad	12884901910
+.globl Main_main2_info
+.type Main_main2_info, @object
+Main_main2_info:
+.LcXp:
+	leaq -16(%rbp),%rax
+	cmpq %r15,%rax
+	jb .LcXr
+	addq $16,%r12
+	cmpq 144(%r13),%r12
+	ja .LcXt
+	movq $stg_CAF_BLACKHOLE_info,-8(%r12)
+	movq 152(%r13),%rax
+	movq %rax,0(%r12)
+	movq %r13,%rdi
+	movq %rbx,%rsi
+	movl $0,%eax
+	call newCAF
+	leaq -8(%r12),%rax
+	movq %rax,8(%rbx)
+	movq $stg_IND_STATIC_info,(%rbx)
+	movq $stg_bh_upd_frame_info,-16(%rbp)
+	leaq -8(%r12),%rax
+	movq %rax,-8(%rbp)
+	movl $Main_main3_closure,%r14d
+	movl $ghczmprim_GHCziTypes_ZMZN_closure+1,%esi
+	addq $-16,%rbp
+	jmp base_GHCziNum_zdfShowIntegerzuzdcshowList_info
+.LcXt:
+	movq $16,184(%r13)
+.LcXr:
+	jmp *-16(%r13)
+.section .data
+	.align 8
+.globl Main_main1_srt
+.type Main_main1_srt, @object
+Main_main1_srt:
+	.quad	base_GHCziIOziHandleziFD_stdout_closure
+	.quad	base_GHCziIOziHandleziText_hPutStr2_closure
+	.quad	Main_main2_closure
+.data
+	.align 8
+.globl Main_main1_closure
+.type Main_main1_closure, @object
+Main_main1_closure:
+	.quad	Main_main1_info
+	.quad	0
+.text
+	.align 8
+	.long	Main_main1_srt-(Main_main1_info)+0
+	.long	0
+	.quad	4294967299
+	.quad	0
+	.quad	30064771087
+.globl Main_main1_info
+.type Main_main1_info, @object
+Main_main1_info:
+.LcXK:
+	movl $base_GHCziIOziHandleziFD_stdout_closure,%r14d
+	movl $Main_main2_closure,%esi
+	movl $ghczmprim_GHCziBool_True_closure+2,%edi
+	jmp base_GHCziIOziHandleziText_hPutStr2_info
+.section .data
+	.align 8
+.globl Main_main7_srt
+.type Main_main7_srt, @object
+Main_main7_srt:
+	.quad	base_GHCziTopHandler_runMainIO1_closure
+	.quad	Main_main1_closure
+.data
+	.align 8
+.globl Main_main7_closure
+.type Main_main7_closure, @object
+Main_main7_closure:
+	.quad	Main_main7_info
+	.quad	0
+.text
+	.align 8
+	.long	Main_main7_srt-(Main_main7_info)+0
+	.long	0
+	.quad	4294967299
+	.quad	0
+	.quad	12884901903
+.globl Main_main7_info
+.type Main_main7_info, @object
+Main_main7_info:
+.LcXX:
+	movl $Main_main1_closure+1,%r14d
+	jmp base_GHCziTopHandler_runMainIO1_info
+.section .data
+	.align 8
+.globl Main_main_srt
+.type Main_main_srt, @object
+Main_main_srt:
+	.quad	Main_main1_closure
+.data
+	.align 8
+.globl Main_main_closure
+.type Main_main_closure, @object
+Main_main_closure:
+	.quad	Main_main_info
+	.quad	0
+.text
+	.align 8
+	.long	Main_main_srt-(Main_main_info)+0
+	.long	0
+	.quad	4294967299
+	.quad	0
+	.quad	4294967311
+.globl Main_main_info
+.type Main_main_info, @object
+Main_main_info:
+.LcYa:
+	jmp Main_main1_info
+.section .data
+	.align 8
+.globl ZCMain_main_srt
+.type ZCMain_main_srt, @object
+ZCMain_main_srt:
+	.quad	Main_main7_closure
+.data
+	.align 8
+.globl ZCMain_main_closure
+.type ZCMain_main_closure, @object
+ZCMain_main_closure:
+	.quad	ZCMain_main_info
+	.quad	0
+.text
+	.align 8
+	.long	ZCMain_main_srt-(ZCMain_main_info)+0
+	.long	0
+	.quad	4294967299
+	.quad	0
+	.quad	4294967311
+.globl ZCMain_main_info
+.type ZCMain_main_info, @object
+ZCMain_main_info:
+.LcYn:
+	jmp Main_main7_info
+.data
+	.align 8
+_module_registered:
+	.quad	0
+.text
+	.align 8
+.globl __stginit_Main_
+.type __stginit_Main_, @object
+__stginit_Main_:
+.LcYx:
+	cmpq $0,_module_registered
+	jne .LcYy
+.LcYz:
+	movq $1,_module_registered
+	addq $-8,%rbp
+	movq $__stginit_base_Prelude_,(%rbp)
+	addq $-8,%rbp
+	movq $__stginit_base_GHCziTopHandler_,(%rbp)
+.LcYy:
+	addq $8,%rbp
+	jmp *-8(%rbp)
+.text
+	.align 8
+.globl __stginit_Main
+.type __stginit_Main, @object
+__stginit_Main:
+.LcYD:
+	jmp __stginit_Main_
+.text
+	.align 8
+.globl __stginit_ZCMain
+.type __stginit_ZCMain, @object
+__stginit_ZCMain:
+.LcYH:
+	addq $8,%rbp
+	jmp *-8(%rbp)
+
