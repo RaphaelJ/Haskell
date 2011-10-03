@@ -1,15 +1,16 @@
 import Text.ParserCombinators.Parsec
 
+-- IN PROGRESS
 -- Implementing a (very) simple compiler from a (very) simple functionnal
--- (interger typed) language to x86 ASM
--- Using Parsec.
--- In progress.
+-- (interger only typed) language to (stack heavy) x86 ASM.
+-- Using Parsec for parsing and a monad to generate x86 assembly.
 
 data SExpr = Literal String | SExpr [SExpr] deriving (Show, Read)
     
 data Statement = Let String Int Statement
                | Call String | If Statement Statement Statement
                | Add Statement Statement | Sub Statement Statement
+               | Variable Int -- Index in the stack
                | Number Int deriving (Show, Read)
 
 -- compiler = generator . tokenizer . parser
@@ -27,8 +28,16 @@ sexpr = do char '('
            spaces >> char ')'
            return $ SExpr nested
 
+
+type StackIdentifiers = [String]
+
+data Assembly = Assembly StackIdentifiers 
+          
+instance Monad 
+
 tokenizer stack (SExpr ["let", name, args, def]) =
-    let stack' = reverse args ++ stack
+    let stack' = reverse args ++ stack -- Append arguments on the stack
+    in 
     
 executor = undefined
 generator = undefined
