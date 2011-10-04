@@ -1,3 +1,4 @@
+import Control.Monad.State
 import Text.ParserCombinators.Parsec
 
 -- IN PROGRESS
@@ -23,19 +24,20 @@ parser = do sexprs <- many (spaces >> sexpr)
             return $ SExpr sexprs
             
 literal = do Literal `fmap` many1 alphaNum
-sexpr = do char '('
+sexpr = do char '(' 
            nested <- many (try $ spaces >> (sexpr <|> literal))
            spaces >> char ')'
            return $ SExpr nested
 
-
-type StackIdentifiers = [String]
-
-data Assembly = Assembly StackIdentifiers 
-          
-instance Monad 
-
-tokenizer stack (SExpr ["let", name, args, def]) =
+type Instructions = [String] -- x86 instructions
+type StackIdentifiers = [String] -- Variables's names on the stack
+type Functions = [(String, (Int, Instructions)] -- Declared functions with # of arguments & instructions
+    
+generator :: State (SExpr, StackIdentifiers, Functions) Instructions
+generator = do
+    
+    
+tokenizer (SExpr ["let", name, args, def]) =
     let stack' = reverse args ++ stack -- Append arguments on the stack
     in 
     
