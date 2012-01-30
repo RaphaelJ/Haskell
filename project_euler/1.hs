@@ -1,4 +1,4 @@
-import Utils(divises)
+import Utils (divises)
 
 main = print $ sum $ [ x | x <- [1..999], mult3or5 x ]
   where

@@ -1,5 +1,5 @@
-import Utils(divises)
+import Utils (divides)
 
 main =
-    let divise20 n = all (`divises` n) [1..20]
-    in print $ head $ filter divise20 [1..]
+    let divides20 n = all (`divides` n) [1..20]
+    in print $ head $ filter divides20 [1..]

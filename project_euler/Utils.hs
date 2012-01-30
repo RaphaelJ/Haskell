@@ -1,14 +1,14 @@
 module Utils (
     -- ^ Numbers' properties
-      divises, isPrime
+      divides, isPrime
     -- ^ Sequences
     , fibonacci, factors, prime, triangle, hailstone
     -- ^ Others
     , palindrome
 ) where
 
--- | Returns True if a divise b.
-a `divises` b = b `rem` a == 0
+-- | Returns True if a divides b.
+a `divides` b = b `rem` a == 0
 
 -- | Returns True is the number is prime.
 isPrime = null . tail {- remove 1 -} . factors
@@ -23,7 +23,7 @@ fibonacci = fibonacci' 0 1
 -- factor).
 factors n =
     let square = floor $ sqrt $ fromIntegral n
-    in [ x | x <- [1..square], x `divises` n ]
+    in [ x | x <- [1..square], x `divides` n ]
 
 -- | Returns an infinite list of prime numbers.
 prime = filter isPrime [2..]

@@ -1,3 +1,3 @@
-import Utils(prime)
+import Utils (prime)
 
 main = print $ prime !! 10000

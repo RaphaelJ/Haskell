@@ -1,4 +1,4 @@
-import Utils(palindrome)
+import Utils (palindrome)
 
 main =
     let nbres = [ x*y | x <- [100..999], y <- [100..999] ]
