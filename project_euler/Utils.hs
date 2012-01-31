@@ -1,8 +1,8 @@
 module Utils (
     -- ^ Numbers' properties
-      divides, isPrime
+      divides, isPrime, factorial
     -- ^ Sequences
-    , fibonacci, factors, prime, triangle, hailstone
+    , fibonacci, factors, prime, triangle, hailstone, digits
     -- ^ Others
     , palindrome
 ) where
@@ -12,6 +12,9 @@ a `divides` b = b `rem` a == 0
 
 -- | Returns True is the number is prime.
 isPrime = null . tail {- remove 1 -} . factors
+
+-- | Returns the factorial of n
+factorial n = product [1..n]
     
 -- | Returns an infinite list of fibonacci numbers.
 fibonacci = fibonacci' 0 1
@@ -39,6 +42,12 @@ triangle = go 1 0
 hailstone 1             = [1]
 hailstone n | even n    = n : hailstone (n `div` 2)
             | otherwise = n : hailstone (3 * n + 1)
+
+-- | Gives the list of digits from a number
+digits 0 = []
+digits n = 
+    let (q, r) = n `quotRem` 10
+    in r : digits q
 
 -- | Returns True if s is a palindrome.
 palindrome s =
