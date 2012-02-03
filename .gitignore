@@ -1,4 +1,4 @@
 *
 !*.hs
 !.gitignore
-facerecognition
+face_recognition
