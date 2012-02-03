@@ -3,7 +3,7 @@ import Data.List
 import Data.Function
 import qualified Data.Map as M
 
-import Utils(hailstone)
+import Utils (hailstone)
 
 type LengthCache = M.Map Integer Integer
 
