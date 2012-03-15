@@ -1,4 +1,6 @@
-*
-!*.hs
-!.gitignore
+.directory
+*~
+*.o
+*.hi
+test*
 face_recognition

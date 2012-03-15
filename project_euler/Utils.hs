@@ -7,6 +7,8 @@ module Utils (
     , palindrome
 ) where
 
+import Data.List
+
 -- | Returns True if a divides b.
 a `divides` b = b `rem` a == 0
 
@@ -17,7 +19,7 @@ isPrime = null . tail {- remove 1 -} . factors
 factorial n = product [1..n]
     
 -- | Returns an infinite list of fibonacci numbers.
-fibonacci = fibonacci' 0 1
+fibonacci = 1 : fibonacci' 0 1
   where
     fibonacci' a b = let x = a + b
                      in x : fibonacci' b x
@@ -40,7 +42,7 @@ triangle = go 1 0
 
 -- | Return the hailstone sequence from n to 1
 hailstone 1             = [1]
-hailstone n | even n    = n : hailstone (n `div` 2)
+hailstone n | even n    = n : hailstone (n `quot` 2)
             | otherwise = n : hailstone (3 * n + 1)
 
 -- | Gives the list of digits from a number
