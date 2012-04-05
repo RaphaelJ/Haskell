@@ -13,10 +13,9 @@ catalans = map catalan' [0..]
         in sum $ zipWith (*) precs (reverse precs)
         
 -- | Returns an array catalans numbers.
-catalansArr l = 
-    arr
+catalansArr l = arr
   where
-    arr = array (0, l) $ map (\n -> (n, catalan' n)) [0..l]
+    arr = listArray (0, l) $ map catalan' [0..l]
     catalan' 0 = 1
     catalan' n =
         sum [ (arr ! i) * (arr ! ((n - 1) - i)) | i <- [0..n-1] ]
