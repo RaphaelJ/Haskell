@@ -17,4 +17,3 @@ anagrams ws =
     accumulator acc w =
         M.insertWith (+) w 1 acc 
     lowerCase (x:xs) = toLower x : xs
-    
