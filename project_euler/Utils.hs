@@ -1,6 +1,6 @@
 module Utils (
     -- ^ Numbers' properties
-      divides, isPrime, factorial
+      divides, isPrime, factorial, isAbundant
     -- ^ Sequences
     , fibonacci, factors, prime, triangle, hailstone, digits
     -- ^ Others
@@ -13,7 +13,7 @@ import Data.List
 a `divides` b = b `rem` a == 0
 
 -- | Returns True is the number is prime.
-isPrime = null . tail {- remove 1 -} . factors
+isPrime = null . tail {- tail remove 1 -} . factors
 
 -- | Returns the factorial of n
 factorial n = product [1..n]
@@ -29,9 +29,18 @@ fibonacci = 1 : fibonacci' 0 1
 factors n =
     let square = floor $ sqrt $ fromIntegral n
     in [ x | x <- [1..square], x `divides` n ]
+    
+-- | Returns the list of all factors of n with theirs reciprocal (n inclusive).
+factors' n =
+    let fs = factors n
+    in nub $ fs ++ reverse (map (n `quot`) fs)
 
 -- | Returns an infinite list of prime numbers.
 prime = filter isPrime [2..]
+
+-- | Returns True is the number is abundant (the sum of its divisors exceeds 
+-- the number).
+isAbundant n = n < (sum $ init $ factors' n)
 
 -- | Returns an infinite list of triangle numbers.
 triangle = go 1 0
@@ -40,12 +49,12 @@ triangle = go 1 0
         let acc' = acc + n
         in acc' : go (n + 1) acc'
 
--- | Return the hailstone sequence from n to 1
+-- | Return the hailstone sequence from n to 1.
 hailstone 1             = [1]
 hailstone n | even n    = n : hailstone (n `quot` 2)
             | otherwise = n : hailstone (3 * n + 1)
 
--- | Gives the list of digits from a number
+-- | Gives the list of digits from a number.
 digits 0 = []
 digits n = 
     let (q, r) = n `quotRem` 10
