@@ -1,10 +1,10 @@
 module Utils (
     -- ^ Numbers' properties
-      divides, isPrime, factorial, isAbundant
+      divides, isPrime, factorial, isAbundant, nDigits, logInt, isPandigital
     -- ^ Sequences
-    , fibonacci, factors, prime, triangle, hailstone, digits
+    , fibonacci, factors, prime, triangle, hailstone, digits, number, rotations
     -- ^ Others
-    , palindrome
+    , palindrome, nthTriangle, toBinary
 ) where
 
 import Data.List
@@ -13,7 +13,7 @@ import Data.List
 a `divides` b = b `rem` a == 0
 
 -- | Returns True is the number is prime.
-isPrime = null . tail {- tail remove 1 -} . factors
+isPrime n = n > 1 && (null $ tail {- tail remove 1 -} $ factors $ n)
 
 -- | Returns the factorial of n
 factorial n = product [1..n]
@@ -54,13 +54,61 @@ hailstone 1             = [1]
 hailstone n | even n    = n : hailstone (n `quot` 2)
             | otherwise = n : hailstone (3 * n + 1)
 
+-- | Returns the number of digits of a number.
+nDigits 0 = 1
+nDigits n = logInt 10 n + 1
+    
+-- | Returns the integer logarithm of the number (i.e. logInt 2 1100 = 10).
+logInt base n =
+    go 0
+  where 
+    go i | base^i > n = i - 1
+         | otherwise  = go (i+1)
+
+-- | An n-digit number is pandigital if it makes use of all the digits 1 to n
+-- exactly once.
+isPandigital d = 
+    let digs = digits d
+    in sort (digs) == [1..length digs]
+
 -- | Gives the list of digits from a number.
-digits 0 = []
 digits n = 
-    let (q, r) = n `quotRem` 10
-    in r : digits q
+    reverse $ digits' n
+  where
+    digits' 0 = []
+    digits' n' = 
+        let (q, r) = n' `quotRem` 10
+        in r : digits' q
+    
+-- | Gives the number from a list of digits.
+number =
+    fst . foldr step (0, 0)
+  where
+    step x (acc, i) = (acc + x * 10^i, i+1)
+
+-- | Returns all the rotations of the digits of a number.
+rotations n = 
+    map rotate [0..nDig - 1]
+  where
+    nDig = nDigits n
+    rotate i = 
+        let (q, r) = n `quotRem` (10^i)
+        in q + r * (10^(nDig - i))
 
 -- | Returns True if s is a palindrome.
 palindrome s =
     let s' = show s
     in s' == reverse s'
+        
+-- | Returns the nth triangle number
+nthTriangle n = (n * (n + 1)) `div` 2
+
+-- | Converts the number to binary
+toBinary 0 = 0
+toBinary n = 
+    go (logInt 2 n) n
+  where
+    go i 0 = 0
+    go i n' = if n' >= 2^i
+                 then 10^i + go (i - 1) (n' - 2^i)
+                 else go (i - 1) n'
