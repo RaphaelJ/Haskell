@@ -5,7 +5,7 @@
 
 import Data.Char
 import Control.Monad.State
-import System
+import System.Environment
 
 data Expr = ExprGT | ExprLT
           | ExprPlus | ExprMinus
