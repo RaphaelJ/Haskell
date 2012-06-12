@@ -1,13 +1,17 @@
 module Utils (
     -- ^ Numbers' properties
-      divides, isPrime, factorial, isAbundant, nDigits, logInt, isPandigital
+      divides, isPrime, factorial, isAbundant, nDigits, sqrtInt, logInt
+    , isPandigital, triangle, isTriangle, pentagonal, isPentagonal, hexagonal
+    , isHexagonal
     -- ^ Sequences
-    , fibonacci, factors, prime, triangle, hailstone, digits, number, rotations
+    , fibonacci, factors, primes, composites, triangles, pentagonals
+    , hexagonals, hailstone, digits, number, rotations
     -- ^ Others
-    , palindrome, nthTriangle, toBinary
+    , palindrome, toBinary, binarySearch
 ) where
 
 import Data.List
+import Data.Maybe
 
 -- | Returns True if a divides b.
 a `divides` b = b `rem` a == 0
@@ -36,19 +40,45 @@ factors' n =
     in nub $ fs ++ reverse (map (n `quot`) fs)
 
 -- | Returns an infinite list of prime numbers.
-prime = filter isPrime [2..]
+primes = filter isPrime [2..]
+
+-- | Returns an infinite list of composite (== non-prime) numbers.
+composites = filter (not . isPrime) [2..]
 
 -- | Returns True is the number is abundant (the sum of its divisors exceeds 
 -- the number).
 isAbundant n = n < (sum $ init $ factors' n)
 
--- | Returns an infinite list of triangle numbers.
-triangle = go 1 0
-  where
-    go n acc =
-        let acc' = acc + n
-        in acc' : go (n + 1) acc'
+-- | Returns the nth triangle number.
+triangle n = (n * (n + 1)) `div` 2
 
+-- | Returns an infinite list of triangle numbers.
+triangles = map triangle [1..]
+
+-- | Returns True if x is a triangular number using a binary search for an
+-- integer solution.
+isTriangle x = x > 0 && isJust (binarySearch triangle 0 x x)
+
+-- | Returns the nth pentagonal number.
+pentagonal n = (n * (3 * n - 1)) `div` 2
+        
+-- | Returns an infinite list of pentagonal numbers.
+pentagonals = map pentagonal [1..]
+
+-- | Returns True if x is a pentagonal number using a binary search for an
+-- integer solution.
+isPentagonal x = x > 0 && isJust (binarySearch pentagonal 0 x x)
+    
+-- | Returns the nth hexagonal number.
+hexagonal n = n * (2 * n - 1)
+
+-- | Returns an infinite list of hexagonal numbers.
+hexagonals = map hexagonal [1..]
+
+-- | Returns True if x is a hexagonal number using a binary search for an
+-- integer solution.
+isHexagonal x = x > 0 && isJust (binarySearch hexagonal 0 x x)
+    
 -- | Return the hailstone sequence from n to 1.
 hailstone 1             = [1]
 hailstone n | even n    = n : hailstone (n `quot` 2)
@@ -57,6 +87,9 @@ hailstone n | even n    = n : hailstone (n `quot` 2)
 -- | Returns the number of digits of a number.
 nDigits 0 = 1
 nDigits n = logInt 10 n + 1
+
+-- | Returns Just x if x is an integer square root of n.
+sqrtInt n = binarySearch (^2) 0 n n 
     
 -- | Returns the integer logarithm of the number (i.e. logInt 2 1100 = 10).
 logInt base n =
@@ -99,9 +132,6 @@ rotations n =
 palindrome s =
     let s' = show s
     in s' == reverse s'
-        
--- | Returns the nth triangle number
-nthTriangle n = (n * (n + 1)) `div` 2
 
 -- | Converts the number to binary
 toBinary 0 = 0
@@ -112,3 +142,18 @@ toBinary n =
     go i n' = if n' >= 2^i
                  then 10^i + go (i - 1) (n' - 2^i)
                  else go (i - 1) n'
+
+-- | Returns the integer x between ]a; b] which which satisfies f(x) = n.
+-- Returns Nothing if doesn't exists.
+binarySearch f a b n = 
+    go 0 n
+  where
+    go mi ma 
+        | ma - mi > 1 =  
+            let m = (mi + ma) `div` 2
+            in case n `compare` f m of
+                    LT -> go mi (m - 1)
+                    GT -> go m ma
+                    EQ -> Just m
+        | f ma == n   = Just ma
+        | otherwise   = Nothing
