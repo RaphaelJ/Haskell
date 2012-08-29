@@ -28,11 +28,11 @@ fibonacci = 1 : fibonacci' 0 1
     fibonacci' a b = let x = a + b
                      in x : fibonacci' b x
 
--- | Returns the list of all factors of n (doesn't returns the reciprocal
+-- | Returns the list of all factors of i (doesn't returns the reciprocal
 -- factor).
-factors n =
-    let square = floor $ sqrt $ fromIntegral n
-    in [ x | x <- [1..square], x `divides` n ]
+factors i =
+    let square = floor $ sqrt $ fromIntegral i
+    in [ x | x <- [1..square], x `divides` i ]
     
 -- | Returns the list of all factors of n with theirs reciprocal (n inclusive).
 factors' n =
@@ -40,7 +40,15 @@ factors' n =
     in nub $ fs ++ reverse (map (n `quot`) fs)
 
 -- | Returns an infinite list of prime numbers.
-primes = filter isPrime [2..]
+primes = 
+    go 2 0
+  where
+    go i n =
+        let square = floor $ sqrt $ fromIntegral i
+            primeFactors = takeWhile (<= square) $ take n primes'
+        in if any (`divides` i) primeFactors
+              then go (i + 1) n
+              else i : go (i + 1) (n + 1)
 
 -- | Returns an infinite list of composite (== non-prime) numbers.
 composites = filter (not . isPrime) [2..]

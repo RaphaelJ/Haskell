@@ -1,12 +1,12 @@
 import Data.List
 import Data.Function
 
-import Utils (prime)
+import Utils (primes)
 
 quadratic a b n = n^2 + a * n + b
 
 consecPrimes a b = 
-    let inPrime a = a `elem` (takeWhile (<= a) prime)
+    let inPrime a = a `elem` (takeWhile (<= a) primes)
     in length $ takeWhile inPrime [ quadratic a b x | x <- [0..] ]
 
 main =
