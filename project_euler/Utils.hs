@@ -45,7 +45,7 @@ primes =
   where
     go i n =
         let square = floor $ sqrt $ fromIntegral i
-            primeFactors = takeWhile (<= square) $ take n primes'
+            primeFactors = takeWhile (<= square) $ take n primes
         in if any (`divides` i) primeFactors
               then go (i + 1) n
               else i : go (i + 1) (n + 1)
