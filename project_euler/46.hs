@@ -3,7 +3,7 @@ import Data.Maybe
 
 import Utils (divides, primes, composites, sqrtInt)
 
-main = 
+main =
     print $ fromJust $ find condition composites
   where
     condition x = 
@@ -11,4 +11,3 @@ main =
             validSum p = 
                 (2 `divides` (x - p)) && (isJust $ sqrtInt $ (x - p) `quot` 2 )
         in odd x && (not $ any validSum primes')
-        
