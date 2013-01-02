@@ -113,7 +113,7 @@ isPandigital d =
     in sort (digs) == [1..length digs]
 
 -- | Gives the list of digits from a number.
-digits n = 
+digits n =
     reverse $ digits' n
   where
     digits' 0 = []
