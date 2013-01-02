@@ -21,7 +21,7 @@ isPrime n = n > 1 && (null $ tail {- tail remove 1 -} $ factors $ n)
 
 -- | Returns the factorial of n
 factorial n = product [1..n]
-    
+
 -- | Returns an infinite list of fibonacci numbers.
 fibonacci = 1 : fibonacci' 0 1
   where
@@ -40,7 +40,7 @@ factors' n =
     in nub $ fs ++ reverse (map (n `quot`) fs)
 
 -- | Returns an infinite list of prime numbers.
-primes = 
+primes =
     go 2 0
   where
     go i n =
@@ -120,7 +120,7 @@ digits n =
     digits' n' = 
         let (q, r) = n' `quotRem` 10
         in r : digits' q
-    
+
 -- | Gives the number from a list of digits.
 number =
     fst . foldr step (0, 0)
